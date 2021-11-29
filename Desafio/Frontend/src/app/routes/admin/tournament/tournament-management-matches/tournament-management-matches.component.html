@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-6">
+    <h1 class="h3 mb-2 text-gray-800 mb-4">Partidas</h1>
+  </div>
+  <div class="col-6 text-right">
+    <!--Poderia dar um disable aqui de acordo com a regra-->
+    <!-- no entanto queria mostrar o tratamento de exceção!-->
+    <button (click)="generateMatchsTournaments()" class="btn btn-primary btn-icon-split">
+      <span class="text">Avançar Etapa do Torneio</span>
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary"></h6>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div *ngFor="let match of tournament.matchs;let i = index;" class="col-3">
+            <div class="card mb-4 py-3 border-left-primary">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-12">
+                    <ng-container *ngIf="i != tournament.matchs.length - 1"> Partida {{i+1}}</ng-container>
+                    <ng-container *ngIf="i == tournament.matchs.length - 1"> Final</ng-container>
+                  </div>
+                  <div class="col-12 text-center mt-4">
+                    {{match.team_1.name}} x {{match.team_2.name}}
+
+                  </div>
+                  <div class="col-12 text-right mt-4">
+                    Vencedor: <strong>{{match.winner?.name}}</strong>
+                  </div>
+                  <div *ngIf="match.winner == null && match.team_1 != null && match.team_2 != null "
+                    class="col-12 mt-4 text-right">
+                    <button (click)="saveResultMatch(match, i)" class="btn btn-success btn-circle btn-sm">
+                      <i class="fas fa-check"></i>
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

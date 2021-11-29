@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-6">
+    <h1 class="h3 mb-2 text-gray-800 mb-4">Torneio</h1>
+  </div>
+  <div class="col-6 text-right">
+    <button routerLink="../create" href="#" class="btn btn-primary btn-icon-split">
+      <span class="text">Novo Torneio</span>
+    </button>
+  </div>
+</div>
+
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Lista de Torneios</h6>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Data</th>
+            <th>Elos Permitidos</th>
+            <th>Competidores</th>
+            <th>Numero de Vagas</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tournament of tournaments; let i = index;">
+            <td>#{{tournament.id}}</td>
+            <td>{{tournament.name}}</td>
+            <td>{{tournament.date | date:'dd/MM/yyyy h:mm a'}}</td>
+            <td>
+              <span *ngFor="let elo of tournament.allowedElos">{{elo.name}}, </span>
+            </td>
+            <td>
+              <span *ngFor="let team of tournament.teams">{{team.name}}, </span>
+            </td>
+            <td>
+              {{tournament.maxNumberTeams}}
+            </td>
+            <td>
+              <i title="Editar" [routerLink]="['../edit/' + tournament.id]" class="fas fa-edit pointer mr-3"></i>
+              <i title="Excluir" (click)="deleteTournament(tournament.id, i)" class="fas fa-trash pointer mr-3"></i>
+              <i title="Gerar Chave do Torneio"(click)="generateMatchsTournaments(tournament)"
+                class="fas fa-users pointer mr-3"></i>
+              <i title="Gerenciar Partidas" [routerLink]="['../management/matches/' + tournament.id]"
+                class="fas fa-chess pointer"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

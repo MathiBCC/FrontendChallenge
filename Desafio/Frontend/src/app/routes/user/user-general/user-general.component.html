@@ -1,0 +1,217 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Geral</h1>
+</div>
+<div class="row">
+    <div class="col-12 col-md-3 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Torneios Ganhos</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800" [countUp]="wonTournaments"></div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-trophy fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-3 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                            Torneios Abertos</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800" [countUp]="openTournaments"></div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-trophy fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-3 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            Torneios Em Andamento</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800" [countUp]="onGoingTournaments"></div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-trophy fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Elo</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="eloname">Seu Elo Atual</label>
+                            <ng-select [(ngModel)]="user.elo?.id || elo" (change)="editElo($event)">
+                                <ng-option *ngFor="let elo of elos" [value]="elo.id">{{elo.name}}</ng-option>
+                            </ng-select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Equipe</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <ng-container *ngIf="user.team == null">
+                        <div class="col-12">
+                            Você não está em nenhuma equipe.
+                            <br>
+                            <span (click)="openModalCreateTeam()" class="text-primary pointer">Clique aqui para
+                                criar</span>
+                            ou
+                            <span (click)="openModalEnterTeam()" class="text-primary pointer">aqui para entrar em uma já
+                                existente</span>
+
+                        </div>
+                    </ng-container>
+
+                    <ng-container *ngIf="user.team != null">
+                        <div class="col-12">
+                            Nome: <strong>{{user.team.name}}</strong>
+                            <br>
+                            Integrantes: <span *ngFor="let member of user.team.users">{{member.name}}, </span>
+                            <br>
+                            <br>
+                            <span (click)="openModalEnterTeam()" class="text-primary pointer"> Clique aqui para trocar
+                                de equipe</span>
+                            ou
+                            <span (click)="leaveTeam()" class="text-primary pointer">aqui para sair da equipe</span>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Lista de Torneios</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nome</th>
+                                <th>Data</th>
+                                <th>Elos Permitidos</th>
+                                <th>Competidores</th>
+                                <th *ngIf="user.team != null">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let tournament of tournaments; let i = index;">
+                                <td>#{{tournament.id}}</td>
+                                <td>{{tournament.name}}</td>
+                                <td>{{tournament.date | date:'dd/MM/yyyy h:mm a'}}</td>
+                                <td>
+                                    <span *ngFor="let elo of tournament.allowedElos">{{elo.name}}, </span>
+                                </td>
+                                <td>
+                                    <span *ngFor="let team of tournament.teams">{{team.name}}, </span>
+                                </td>
+                                <td *ngIf="user.team != null">
+                                    <i  (click)="enterTournament(tournament)"
+                                        class="fas fa-sign-in-alt pointer"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--Modals-->
+<ng-template #modalCreateTeam>
+    <form [formGroup]="formCreateTeam">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Cadastrar Time</h4>
+                <button type="button" class="close" (click)="closeModal(modalCreateTeamRef)"
+                    aria-hidden="true">×</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="eloname">Nome</label>
+                        <input type="text" class="form-control" id="eloname" formControlName="name" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" (click)="closeModal(modalCreateTeamRef)">Fechar</button>
+                <button type="button" class="btn btn-primary" [disabled]="!formCreateTeam.valid"
+                    (click)="saveTeam()">Salvar</button>
+            </div>
+        </div>
+    </form>
+    <!-- /.modal-content -->
+</ng-template>
+
+<ng-template #modalEnterTeam>
+    <form [formGroup]="formEnterTeam">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Escolha um Time</h4>
+                <button type="button" class="close" (click)="closeModal(modalEnterTeamRef)"
+                    aria-hidden="true">×</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="eloname">Nome</label>
+                        <ng-select formControlName="id">
+                            <ng-option *ngFor="let team of teams" [value]="team.id">{{team.name}}</ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" (click)="closeModal(modalEnterTeamRef)">Fechar</button>
+                <button type="button" class="btn btn-primary" [disabled]="!formEnterTeam.valid"
+                    (click)="enterTeam()">Entrar</button>
+            </div>
+        </div>
+    </form>
+    <!-- /.modal-content -->
+</ng-template>

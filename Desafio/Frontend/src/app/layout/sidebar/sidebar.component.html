@@ -1,0 +1,52 @@
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center">
+        <div class="row">
+            <div class="col-12">
+                <div class="sidebar-brand-icon ml-1">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="sidebar-brand-text text-nowrap">Summoners Rift</div>
+            </div>
+        </div>  
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a routerLink="/user" class="nav-link">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div *ngIf="role == 'ADMIN'" class="sidebar-heading pointer">
+        Admin
+    </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li *ngIf="role == 'ADMIN'" class="nav-item">
+        <a class="nav-link collapsed pointer" data-toggle="collapse" data-target="#collapseTwo"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-trophy fa-cog"></i>
+            <span>Torneio</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Funcionalidades</h6>
+                <a class="collapse-item" routerLink="/admin/tournament/create">Adicionar</a>
+                <a class="collapse-item" routerLink="/admin/tournament/list">Consultar</a>
+            </div>
+        </div>
+    </li>
+
+
+</ul>

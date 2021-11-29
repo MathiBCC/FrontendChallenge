@@ -1,0 +1,12 @@
+.pointer{
+  cursor: pointer;
+}
+ng-select.ng-invalid .ng-select-container {
+  border-color: #dc3545;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px #fde6e8;
+}
+
+ng-select.ng-valid .ng-select-container {
+  border-color: #198754;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px #ade6a8;
+}

@@ -1,0 +1,782 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>desafio documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">desafio documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  TournamentManagementMatchesComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/routes/admin/tournament/tournament-management-matches/tournament-management-matches.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>É Responsável por listar todas as partidas de um torneio especifico e permite que o usuário admin de os resultados das partidas e avançe a etapa do torneio</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-tournament-management-matches</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./tournament-management-matches.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./tournament-management-matches.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#tournament" >tournament</a>
+                            </li>
+                            <li>
+                                <a href="#tournamentId" >tournamentId</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#generateMatchsTournaments" >generateMatchsTournaments</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#saveResultMatch" >saveResultMatch</a>
+                            </li>
+                            <li>
+                                <a href="#tournamentGetById" >tournamentGetById</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(tournamentService: <a href="../injectables/TournamentService.html" target="_self">TournamentService</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, alertService: <a href="../injectables/AlertService.html" target="_self">AlertService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/routes/admin/tournament/tournament-management-matches/tournament-management-matches.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>tournamentService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TournamentService.html" target="_self" >TournamentService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>alertService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AlertService.html" target="_self" >AlertService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateMatchsTournaments"></a>
+                    <span class="name">
+                        <span ><b>generateMatchsTournaments</b></span>
+                        <a href="#generateMatchsTournaments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>generateMatchsTournaments()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/routes/admin/tournament/tournament-management-matches/tournament-management-matches.component.ts:72</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/routes/admin/tournament/tournament-management-matches/tournament-management-matches.component.ts:28</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveResultMatch"></a>
+                    <span class="name">
+                        <span ><b>saveResultMatch</b></span>
+                        <a href="#saveResultMatch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveResultMatch(match: <a href="../interfaces/IMatch.html" target="_self">IMatch</a>, index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/routes/admin/tournament/tournament-management-matches/tournament-management-matches.component.ts:42</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>match</td>
+                                    <td>
+                                                <code><a href="../interfaces/IMatch.html" target="_self" >IMatch</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tournamentGetById"></a>
+                    <span class="name">
+                        <span ><b>tournamentGetById</b></span>
+                        <a href="#tournamentGetById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>tournamentGetById()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/routes/admin/tournament/tournament-management-matches/tournament-management-matches.component.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tournament"></a>
+                    <span class="name">
+                        <span ><b>tournament</b></span>
+                        <a href="#tournament"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ITournament.html" target="_self" >ITournament</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Tournament()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/routes/admin/tournament/tournament-management-matches/tournament-management-matches.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tournamentId"></a>
+                    <span class="name">
+                        <span ><b>tournamentId</b></span>
+                        <a href="#tournamentId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Number(this.route.snapshot.paramMap.get(&#x27;id&#x27;))</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/routes/admin/tournament/tournament-management-matches/tournament-management-matches.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { AlertService } from &#x27;src/app/core/services/alert.service&#x27;;
+import { IMatch } from &#x27;src/app/domain/interfaces/match.interface&#x27;;
+import { ITournament } from &#x27;src/app/domain/interfaces/tournament.interface&#x27;;
+import { Team } from &#x27;src/app/domain/models/team&#x27;;
+import { Tournament } from &#x27;src/app/domain/models/tournament&#x27;;
+import { TournamentService } from &#x27;src/app/domain/services/tournament.service&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+  /**
+ * É Responsável por listar todas as partidas de um torneio especifico e permite que o usuário admin de os resultados das partidas e avançe a etapa do torneio
+ */
+@Component({
+  selector: &#x27;app-tournament-management-matches&#x27;,
+  templateUrl: &#x27;./tournament-management-matches.component.html&#x27;,
+  styleUrls: [&#x27;./tournament-management-matches.component.scss&#x27;]
+})
+export class TournamentManagementMatchesComponent implements OnInit {
+
+  tournament: ITournament &#x3D; new Tournament();
+  tournamentId: number &#x3D; Number(this.route.snapshot.paramMap.get(&#x27;id&#x27;));
+
+  constructor(
+    private tournamentService: TournamentService,
+     private route: ActivatedRoute,
+     private alertService: AlertService) { }
+
+  ngOnInit(): void {
+    this.tournamentGetById()
+  }
+
+  tournamentGetById(){
+    this.tournamentService.getById(this.tournamentId).subscribe(
+      (response: ITournament) &#x3D;&gt;{
+        Object.assign(this.tournament, response);
+      }
+    )
+  }
+
+  
+
+  saveResultMatch(match: IMatch, index: number){
+    Swal.fire({
+      title: &#x27;Vencedor da Partida&#x27;,
+      showDenyButton: true,
+      confirmButtonText: match.team_1.name,
+      denyButtonText: match.team_2.name,
+    }).then((result) &#x3D;&gt; {
+      let winner &#x3D; new Team();
+      if (result.isConfirmed) {
+        winner.id &#x3D; match.team_1.id;
+        this.tournament.matchs[index].winner &#x3D; winner;
+        
+      } else {
+        winner.id &#x3D; match.team_2.id;
+        this.tournament.matchs[index].winner &#x3D; winner;
+      }
+      
+      if(index &#x3D;&#x3D; this.tournament.matchs.length - 1){
+        this.tournament.winner &#x3D; winner;
+      }
+
+      this.tournamentService.update(this.tournament).subscribe(
+        (response) &#x3D;&gt;{
+          this.alertService.successSave(&#x27;Partida&#x27;);
+          this.tournamentGetById();
+        }
+      )
+    })
+  }
+
+  generateMatchsTournaments(){
+    this.tournamentService.fillMatchs(this.tournament).subscribe(
+      (response) &#x3D;&gt;{
+        this.alertService.success(&#x27;Tudo certo!&#x27;, &#x27;as partidas foram geradas com sucesso&#x27;);
+      }
+    )
+  }
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row&quot;&gt;
+  &lt;div class&#x3D;&quot;col-6&quot;&gt;
+    &lt;h1 class&#x3D;&quot;h3 mb-2 text-gray-800 mb-4&quot;&gt;Partidas&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;col-6 text-right&quot;&gt;
+    &lt;!--Poderia dar um disable aqui de acordo com a regra--&gt;
+    &lt;!-- no entanto queria mostrar o tratamento de exceção!--&gt;
+    &lt;button (click)&#x3D;&quot;generateMatchsTournaments()&quot; class&#x3D;&quot;btn btn-primary btn-icon-split&quot;&gt;
+      &lt;span class&#x3D;&quot;text&quot;&gt;Avançar Etapa do Torneio&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;row&quot;&gt;
+  &lt;div class&#x3D;&quot;col-12&quot;&gt;
+    &lt;div class&#x3D;&quot;card shadow mb-4&quot;&gt;
+      &lt;div class&#x3D;&quot;card-header py-3&quot;&gt;
+        &lt;h6 class&#x3D;&quot;m-0 font-weight-bold text-primary&quot;&gt;&lt;/h6&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;card-body&quot;&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+          &lt;div *ngFor&#x3D;&quot;let match of tournament.matchs;let i &#x3D; index;&quot; class&#x3D;&quot;col-3&quot;&gt;
+            &lt;div class&#x3D;&quot;card mb-4 py-3 border-left-primary&quot;&gt;
+              &lt;div class&#x3D;&quot;card-body&quot;&gt;
+                &lt;div class&#x3D;&quot;row&quot;&gt;
+                  &lt;div class&#x3D;&quot;col-12&quot;&gt;
+                    &lt;ng-container *ngIf&#x3D;&quot;i !&#x3D; tournament.matchs.length - 1&quot;&gt; Partida {{i+1}}&lt;/ng-container&gt;
+                    &lt;ng-container *ngIf&#x3D;&quot;i &#x3D;&#x3D; tournament.matchs.length - 1&quot;&gt; Final&lt;/ng-container&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;col-12 text-center mt-4&quot;&gt;
+                    {{match.team_1.name}} x {{match.team_2.name}}
+
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;col-12 text-right mt-4&quot;&gt;
+                    Vencedor: &lt;strong&gt;{{match.winner?.name}}&lt;/strong&gt;
+                  &lt;/div&gt;
+                  &lt;div *ngIf&#x3D;&quot;match.winner &#x3D;&#x3D; null &amp;&amp; match.team_1 !&#x3D; null &amp;&amp; match.team_2 !&#x3D; null &quot;
+                    class&#x3D;&quot;col-12 mt-4 text-right&quot;&gt;
+                    &lt;button (click)&#x3D;&quot;saveResultMatch(match, i)&quot; class&#x3D;&quot;btn btn-success btn-circle btn-sm&quot;&gt;
+                      &lt;i class&#x3D;&quot;fas fa-check&quot;&gt;&lt;/i&gt;
+                    &lt;/button&gt;
+                  &lt;/div&gt;
+
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./tournament-management-matches.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="row">  <div class="col-6">    <h1 class="h3 mb-2 text-gray-800 mb-4">Partidas</h1>  </div>  <div class="col-6 text-right">    <!--Poderia dar um disable aqui de acordo com a regra-->    <!-- no entanto queria mostrar o tratamento de exceção!-->    <button (click)="generateMatchsTournaments()" class="btn btn-primary btn-icon-split">      <span class="text">Avançar Etapa do Torneio</span>    </button>  </div></div><div class="row">  <div class="col-12">    <div class="card shadow mb-4">      <div class="card-header py-3">        <h6 class="m-0 font-weight-bold text-primary"></h6>      </div>      <div class="card-body">        <div class="row">          <div *ngFor="let match of tournament.matchs;let i = index;" class="col-3">            <div class="card mb-4 py-3 border-left-primary">              <div class="card-body">                <div class="row">                  <div class="col-12">                    <ng-container *ngIf="i != tournament.matchs.length - 1"> Partida {{i+1}}</ng-container>                    <ng-container *ngIf="i == tournament.matchs.length - 1"> Final</ng-container>                  </div>                  <div class="col-12 text-center mt-4">                    {{match.team_1.name}} x {{match.team_2.name}}                  </div>                  <div class="col-12 text-right mt-4">                    Vencedor: <strong>{{match.winner?.name}}</strong>                  </div>                  <div *ngIf="match.winner == null && match.team_1 != null && match.team_2 != null "                    class="col-12 mt-4 text-right">                    <button (click)="saveResultMatch(match, i)" class="btn btn-success btn-circle btn-sm">                      <i class="fas fa-check"></i>                    </button>                  </div>                </div>              </div>            </div>          </div>        </div>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForbiddenComponent', 'selector': 'app-forbidden'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NgxSpinnerComponent', 'selector': 'app-ngx-spinner'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'TournamentCreateComponent', 'selector': 'app-tournament-create'},{'name': 'TournamentEditComponent', 'selector': 'app-tournament-edit'},{'name': 'TournamentListComponent', 'selector': 'app-tournament-list'},{'name': 'TournamentManagementMatchesComponent', 'selector': 'app-tournament-management-matches'},{'name': 'UserGeneralComponent', 'selector': 'app-user-general'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'TournamentManagementMatchesComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TournamentManagementMatchesComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
